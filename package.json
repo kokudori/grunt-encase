@@ -1,0 +1,39 @@
+{
+  "name": "grunt-encase",
+  "description": "concat and encased in an anonymous function to export any variable",
+  "version": "0.0.1",
+  "homepage": "https://github.com/kokudori/grunt-encase",
+  "author": {
+    "name": "Kokudori",
+    "email": "kokudori0912@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kokudori/grunt-encase.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kokudori/grunt-encase/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/kokudori/grunt-encase/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "grunt.js",
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "grunt": "~0.3.17"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.17"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
