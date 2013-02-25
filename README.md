@@ -25,7 +25,7 @@ src2.js
 
 dest.js
 
-    (function() {
+    (function(s, undefined) {
       // concat src1.js and src2.js
       var hoge = 'hogehoge';
       ...
@@ -34,7 +34,7 @@ dest.js
       
       // export variable can select with option.
       module.exports = {hoge: hoge, piyo: piyo}; // if enviroment is 'browser', window = {...}
-    })();
+    })(someVariable);
 
 
 ## Documentation
@@ -53,11 +53,13 @@ Then add some configuration for the plugin like so:
         grunt.initConfig({
           encase: {                         // Task
             develop: {                      // Target
-              separator: '\n',             // Concat Separator
-              enviroment: 'browser',   // Target Enviroment ('node' or 'browser')
-              exports: ['hoge', 'piyo'],  // Export Variables (string expression or variable names array)
-              src: 'src/*.js',               // source (string expression or filenames array)
-              dest: 'dest/build.js'        // destination
+              separator: '\n',              // Concat Separator
+              enviroment: 'browser',        // Target Enviroment ('node' or 'browser')
+              exports: ['hoge', 'piyo'],    // Export Variables (string expression or variable names array)
+              params: {"window": "w"},      // Params passed into anonymous function, key/value represents ... 
+                                            // ... how they will be utilized in the function call argument vs function argument		   
+              src: 'src/*.js',              // source (string expression or filenames array)
+              dest: 'dest/build.js'         // destination
             }
           }
         });
@@ -72,7 +74,7 @@ Then just run `grunt encase` and enjoy!
 + Minify option.
 
 ## Release History
-0.0.1 - iniial release with a minimum feature
+0.0.1 - initial release with a minimum feature
 
 ## License
 Copyright (c) 2012 Kokudori

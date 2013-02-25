@@ -28,6 +28,14 @@
 				src: 'test/src/src.js',
 				dest: 'test/dest/multiexport-node.js',
 				exports: ['hoge', 'piyo', 'foo']
+			},
+			'params-browser-test': {
+				separator: '\n',
+				enviroment: 'browser',
+				src: 'test/src/src.js',
+				dest: 'test/dest/params-browser-test.js',
+				exports: ['hoge'],
+				params:{"window":"w", "document":"d"}
 			}
 		},
 		test: {
