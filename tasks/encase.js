@@ -15,6 +15,8 @@ module.exports = function (grunt) {
 	grunt.registerHelper('encase', function (content, options) {
 		var exports = options.exports;
 		var params = (options.params || {});
+		var defines = (options.defines || {});
+		var encasedFileContent = "";
 
 		if (!exports)
 			grunt.fatal('exports option is empty.');
@@ -23,6 +25,11 @@ module.exports = function (grunt) {
 		// but if present in the config, they should be of type object	
 		if (typeof params != 'object')
 			grunt.fatal('params option needs to be an object.');	
+			
+		// defines could be be undefined, 
+		// but if present in the config, they should be of type object	
+		if (typeof defines != 'object')
+			grunt.fatal('defines option needs to be an object.');			
 			
 		var enviroment = (function () {
 			if (options.enviroment === 'node')
@@ -57,9 +64,9 @@ module.exports = function (grunt) {
 			vals = vals.join(",");
 			return (vals.length == 0 ? "undefined" : vals + ",undefined");
 		})(params);		
+		encasedFileContent = '(function(' + functionParamsStr + ') {\n' + content + '\n' + output + '\n})(' + functionCallerParamsStr + ');';
 		
-		
-		return '(function(' + functionParamsStr + ') {\n' + content + '\n' + output + '\n})(' + functionCallerParamsStr + ');';
+		return encasedFileContent;
 	});
 
 	grunt.registerMultiTask('encase', 'Connecting the individual files, encased in an anonymous function to export any variable.', function () {
@@ -69,7 +76,8 @@ module.exports = function (grunt) {
 		src = grunt.helper('encase', src, {
 			enviroment: this.data.enviroment,
 			exports: this.data.exports,
-			params: this.data.params
+			params: this.data.params,
+			defines: this.data.defines
 		});
 
 		grunt.file.write(this.file.dest, src);

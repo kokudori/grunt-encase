@@ -36,7 +36,15 @@
 				dest: 'test/dest/params-browser-test.js',
 				exports: ['hoge'],
 				params:{"window":"w", "document":"d"}
-			}
+			},
+			'amd-browser-test': {
+				separator: '\n',
+				enviroment: 'browser',
+				src: 'test/src/src.js',
+				dest: 'test/dest/amd-browser-test.js',
+				exports: ['hoge'],
+				defines:{"jquery":"$", "backbone":"bb"}
+			}			
 		},
 		test: {
 			all: ['test/test.js']
