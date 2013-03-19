@@ -56,15 +56,44 @@ module.exports = function (grunt) {
 			return 'window.' + exports + ' = ' + exports;
 		})();
 		
-		var functionCallerParamsStr = Object.keys(params).join(",");
 		
-		var functionParamsStr = (function(o) {
-			var vals=[];
-			for(var k in o) vals.push(o[k]); 
-			vals = vals.join(",");
-			return (vals.length == 0 ? "undefined" : vals + ",undefined");
-		})(params);		
-		encasedFileContent = '(function(' + functionParamsStr + ') {\n' + content + '\n' + output + '\n})(' + functionCallerParamsStr + ');';
+		if(Object.keys(defines).length !== 0) {
+			// wrap the file content into an AMD module's 'define' function
+			var prepend = (function(o) {
+				var str = "define(["; 
+				
+				var keys = Object.keys(o);
+				for(var i=0; i<keys.length; i++) {
+					str = str + "'" + keys[i] + "'";
+					if(i !== (keys.length - 1)) {
+						str = str + ",";	
+					}
+				}
+				str = str + "], function(";
+				
+				var vals=[];
+				for(var k in o) vals.push(o[k]); 
+				str = str + vals.join(", ") + ") { \n";
+				
+				return str;
+			})(defines);
+			var append = "\n});";
+			
+			encasedFileContent = prepend + content + '\n' + output + append;
+		}
+		else {
+			// wrap the file content into an IIFE
+			var functionCallerParamsStr = Object.keys(params).join(",");
+
+			var functionParamsStr = (function(o) {
+				var vals=[];
+				for(var k in o) vals.push(o[k]); 
+				vals = vals.join(",");
+				return (vals.length == 0 ? "undefined" : vals + ",undefined");
+			})(params);	
+				
+			encasedFileContent = '(function(' + functionParamsStr + ') {\n' + content + '\n' + output + '\n})(' + functionCallerParamsStr + ');';
+		}
 		
 		return encasedFileContent;
 	});

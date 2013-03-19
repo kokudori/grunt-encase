@@ -42,7 +42,7 @@
 				enviroment: 'browser',
 				src: 'test/src/src.js',
 				dest: 'test/dest/amd-browser-test.js',
-				exports: ['hoge'],
+				exports: [],
 				defines:{"jquery":"$", "backbone":"bb"}
 			}			
 		},
