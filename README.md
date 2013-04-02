@@ -100,8 +100,8 @@ in the initConfig like below.
 + Minify option.
 
 ## Release History
-0.0.1 - initial release with a minimum feature
-0.0.2 - added support for Grunt v0.4.x
++ 0.0.1 - initial release with a minimum feature
++ 0.0.2 - added support for Grunt v0.4.x
 
 ## License
 Copyright (c) 2012 Kokudori
