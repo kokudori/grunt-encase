@@ -8,8 +8,9 @@ module.exports = function (grunt) {
 		'concat and encase multiple JS files in an anonymous \
 		function to export any variable or inside an AMD Module',
 		function () {
-			var src,
+			var result,
 				separator = this.data.separator,
+				src = concat.concat(this.files, separator, grunt),
 				options = {
 					enviroment: this.data.enviroment,
 					exports: this.data.exports,
@@ -17,16 +18,14 @@ module.exports = function (grunt) {
 					defines: this.data.defines
 				};
 
-			// Concat Files
-			src = concat.concat(this.files, separator, grunt);
-			// Encase src
 			try {
-				src = encasor.encase(src, options);
+				result = encasor.encase(src, options);
 			} catch (e) {
 				grunt.fatal(e);
 			}
-			grunt.file.write(this.data.dest, src);
-			if (this.errorCount) { return false; }
+			grunt.file.write(this.data.dest, result);
+			if (this.errorCount)
+				return false;
 			grunt.log.writeln('Encased File "' + this.data.dest + '" created!');
 		}
 	);

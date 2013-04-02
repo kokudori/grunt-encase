@@ -1,32 +1,24 @@
 'use strict';
 
-var encasor = module.exports = {};
-
-encasor.encase = function(content, options) {
+exports.encase = function (content, options) {
 	var exports = options.exports,
-		params = (options.params || {}),
-		defines = (options.defines || {}),
-		encasedFileContent = '';
+		params = options.params || {},
+		defines = options.defines || {},
+		useAMD = Object.keys(defines).length !== 0;
 
 	if (!exports)
 		throw 'exports option is empty.';
-
-	// params could be be undefined,
-	// but if present in the config, they should be of type object
 	if (typeof params !== 'object')
 		throw 'params option needs to be an object.';
-
-	// defines could be be undefined,
-	// but if present in the config, they should be of type object
 	if (typeof defines !== 'object')
 		throw 'defines option needs to be an object.';
 
 	var enviroment = (function () {
 		if (options.enviroment === 'node')
 			return 'node';
-		if (options.enviroment === 'browser')
+		if (options.enviroment === 'browser' || typeof options.enviroment === 'undefined')
 			return 'browser';
-		return 'browser';
+		throw 'enviroment option needs "node" or "browser".';
 	})();
 	var output = (function () {
 		if (enviroment === 'node') {
@@ -35,7 +27,6 @@ encasor.encase = function(content, options) {
 					return name + ': ' + name;
 				}).join(', ') + ' };';
 			}
-			// exports.name = value or exports = value
 			return 'module.exports.' + exports + ' = ' + exports + ';';
 		}
 		if (exports instanceof Array) {
@@ -45,40 +36,29 @@ encasor.encase = function(content, options) {
 		}
 		return 'window.' + exports + ' = ' + exports + ';';
 	})();
-	if(Object.keys(defines).length !== 0) {
-		// wrap the file content into an AMD module's 'define' function
-		var prepend = (function(o) {
-			var vals=[],
-				str = 'define([',
-				keys = Object.keys(o);
-			for(var i=0; i<keys.length; i += 1) {
-				str = str + '\'' + keys[i] + '\'';
-				if(i !== (keys.length - 1)) {
-					str = str + ',';
-				}
-			}
-			str = str + '], function(';
-			for (var k in o) {
-				vals.push(o[k]);
-			}
-			return str + vals.join(', ') + ') {\n';
-		})(defines);
-		var append = '\n});';
+
+	if (useAMD) {
+		var prepend = (function (defines) {
+				var names = Object.keys(defines);
+				return 'define([' + names.map(function (name, i) {
+					return '\'' + name + '\'';
+				}).join(', ') + '], function(' + names.map(function (name) {
+					return name;
+				}).join(', ') + ') {\n';
+			})(defines);
 		
-		encasedFileContent = prepend + content + output + append;
+		return prepend + content + output + '\n});';
 	}
-	else {
-		// wrap the file content into an IIFE
-		var functionCallerParamsStr = Object.keys(params).join(',');
-		var functionParamsStr = (function(o) {
-			var vals=[];
-			for (var k in o) {
-				vals.push(o[k]);
-			}
-			vals = vals.join(',');
-			return vals.length === 0 ? 'undefined' : vals + ',undefined';
+
+	// wrap the file content into an IIFE
+	var functionCallerParamsStr = Object.keys(params).join(','),
+		functionParamsStr = (function (params) {
+			var names = Object.keys(params);
+			if (names.length === 0)
+				return 'undefined';
+			return names.map(function (name) {
+				return params[name];
+			}).join(',') + ',undefined';
 		})(params);
-		encasedFileContent = '(function(' + functionParamsStr + ') {\n' + content + '\n' + output + '\n})(' + functionCallerParamsStr + ');';
-	}
-	return encasedFileContent;
+	return '(function(' + functionParamsStr + ') {\n' + content + '\n' + output + '\n})(' + functionCallerParamsStr + ');';
 };

@@ -1,13 +1,15 @@
-# grunt-encase
-[![Build Status](https://travis-ci.org/kokudori/grunt-encase.png?branch=master)](https://travis-ci.org/kokudori/grunt-encase)  
+# grunt-encase [![Build Status](https://travis-ci.org/kokudori/grunt-encase.png?branch=master)](https://travis-ci.org/kokudori/grunt-encase)  
 Concat and encase in an anonymous function to export any variable or encase within a AMD module.  
 Test every possible individual files and variables can be selected to be published at release file.  
 
 ## Getting Started
-Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-encase`  
-Then add this line to your project's `grunt.js` gruntfile:  
+Install this grunt plugin next to your project's with: `npm install grunt-encase`  
+Then add this line to your project's `Gruntfile.js` Gruntfile:  
 
     grunt.loadNpmTasks('grunt-encase');
+
+For information about installing the Grunt, please see here  
+[http://gruntjs.com/getting-started](http://gruntjs.com/getting-started)
 
 ## Example
 
@@ -42,7 +44,7 @@ You'll need to install `grunt-encase` first:
 
     npm install grunt-encase
 
-Then modify your `grunt.js` file by adding the following line:
+Then modify your `Gruntfile.js` file by adding the following line:
 
     grunt.loadNpmTasks('grunt-encase');
 

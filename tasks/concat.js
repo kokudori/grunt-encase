@@ -3,22 +3,14 @@
 var concat = module.exports = {};
 
 concat.concat = function (files, separator, grunt) {
-	var src = '';
-	// Iterate over all specified file groups.
-	files.forEach(function(f) {
-		// Concat specified files.
-		src = f.src.filter(function(filepath) {
-			// Warn on and remove invalid source files (if nonull was set).
-			if (!grunt.file.exists(filepath)) {
-				grunt.log.warn('Source file "' + filepath + '" not found.');
-				return false;
-			} else {
+	return files.map(function(file) {
+		return file.src.filter(function (path) {
+			if (grunt.file.exists(path))
 				return true;
-			}
-		}).map(function(filepath) {
-			// Read file source.
-			return grunt.file.read(filepath);
+			grunt.log.warn('Source file "' + path + '" not found.');
+			return false;
+		}).map(function(path) {
+			return grunt.file.read(path);
 		}).join(grunt.util.normalizelf(separator));
 	});
-	return src;
 };
