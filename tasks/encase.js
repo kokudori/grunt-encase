@@ -19,7 +19,7 @@ module.exports = function (grunt) {
 				};
 
 			// Concat Files
-		    src = concat.concat(this.files, separator, grunt);
+			src = concat.concat(this.files, separator, grunt);
 			// Encase src
 			src = encasor.encase(src, options, grunt);
 			grunt.file.write(this.data.dest, src);
