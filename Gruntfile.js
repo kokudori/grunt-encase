@@ -54,6 +54,7 @@ module.exports = function (grunt) {
 		jshint: {
 			files: ['Gruntfile.js', 'tasks/*.js', 'test/*.js', 'test/**/*.js'],
 			options: {
+				strict: false,
 				multistr: true,
 				bitwise: true,
 				camelcase: true,
