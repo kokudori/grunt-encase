@@ -1,11 +1,11 @@
 # grunt-encase
-Concat and encase in an anonymous function to export any variable or encase within a AMD module.
-Test every possible individual files and variables can be selected to be published at release file.
+[![Build Status](https://travis-ci.org/kokudori/grunt-encase.png?branch=master)](https://travis-ci.org/kokudori/grunt-encase)  
+Concat and encase in an anonymous function to export any variable or encase within a AMD module.  
+Test every possible individual files and variables can be selected to be published at release file.  
 
 ## Getting Started
-Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-encase`
-
-Then add this line to your project's `grunt.js` gruntfile:
+Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-encase`  
+Then add this line to your project's `grunt.js` gruntfile:  
 
     grunt.loadNpmTasks('grunt-encase');
 
@@ -72,26 +72,25 @@ Then just run `grunt encase` and enjoy!
 The file content can be encased in a AMD Module by specifying "defines" attribute
 in the initConfig like below.
 
-	grunt.initConfig({
-	    ...
-	    grunt.initConfig({
-	      encase: {                         // Task
-	        develop: {                      // Target
-	          separator: '\n',              // Concat Separator
-	          enviroment: 'browser',        // Target Enviroment ('node' or 'browser')
-	          exports: ['hoge', 'piyo'],    // Export Variables (string expression or variable names array)
-	          defines: {
-						"jquery": "$",		// Params to be used in constructing the AMD 'define' function
-						"backbone": "bb"
-					   },       	   
-	          src: 'src/*.js',              // source (string expression or filenames array)
-	          dest: 'dest/build.js'         // destination
-	        }
-	      }
-	    });
-	    ...
-	});
-
+    grunt.initConfig({
+        ...
+        grunt.initConfig({
+          encase: {                         // Task
+            develop: {                      // Target
+              separator: '\n',              // Concat Separator
+              enviroment: 'browser',        // Target Enviroment ('node' or 'browser')
+              exports: ['hoge', 'piyo'],    // Export Variables (string expression or variable names array)
+              defines: {
+                "jquery": "$",              // Params to be used in constructing the AMD 'define' function
+                "backbone": "bb"
+              },
+              src: 'src/*.js',              // source (string expression or filenames array)
+              dest: 'dest/build.js'         // destination
+            }
+          }
+        });
+        ...
+    });
  
 
 ## TODO
@@ -104,5 +103,5 @@ in the initConfig like below.
 + 0.0.2 - added support for Grunt v0.4.x
 
 ## License
-Copyright (c) 2012 Kokudori
+Copyright (c) 2012-2013 Kokudori
 Licensed under the MIT license.
