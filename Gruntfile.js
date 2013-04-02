@@ -36,7 +36,15 @@
 				dest: 'test/dest/params-browser-test.js',
 				exports: ['hoge'],
 				params:{"window":"w", "document":"d"}
-			}
+			},
+			'amd-browser-test': {
+				separator: '\n',
+				enviroment: 'browser',
+				src: 'test/src/*.js',
+				dest: 'test/dest/amd-browser-test.js',
+				exports: [],
+				defines:{"jquery":"$", "backbone":"bb"}
+			}			
 		},
 		test: {
 			all: ['test/test.js']
@@ -64,7 +72,5 @@
 	});
 
 	grunt.loadTasks('tasks');
-
-	// https://github.com/gruntjs/grunt/issues/349 fixed in Grunt v0.4.
-	grunt.registerTask('default', 'encase test'); // add lint (lint is fatal with UTF8 BOM)
+	grunt.registerTask('default', ['encase']);
 };

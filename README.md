@@ -1,5 +1,5 @@
 # grunt-encase
-Concat and encased in an anonymous function to export any variable.
+Concat and encase in an anonymous function to export any variable or encase within a AMD module.
 Test every possible individual files and variables can be selected to be published at release file.
 
 ## Getting Started
@@ -68,13 +68,40 @@ Then add some configuration for the plugin like so:
 
 Then just run `grunt encase` and enjoy!
 
+
+The file content can be encased in a AMD Module by specifying "defines" attribute
+in the initConfig like below.
+
+	grunt.initConfig({
+	    ...
+	    grunt.initConfig({
+	      encase: {                         // Task
+	        develop: {                      // Target
+	          separator: '\n',              // Concat Separator
+	          enviroment: 'browser',        // Target Enviroment ('node' or 'browser')
+	          exports: ['hoge', 'piyo'],    // Export Variables (string expression or variable names array)
+	          defines: {
+						"jquery": "$",		// Params to be used in constructing the AMD 'define' function
+						"backbone": "bb"
+					   },       	   
+	          src: 'src/*.js',              // source (string expression or filenames array)
+	          dest: 'dest/build.js'         // destination
+	        }
+	      }
+	    });
+	    ...
+	});
+
+ 
+
 ## TODO
 + When enviroment is 'node', can select export method by option.  
     module.exports = {name: value} or module.exports = value. (first version now)
 + Minify option.
 
 ## Release History
-0.0.1 - initial release with a minimum feature
++ 0.0.1 - initial release with a minimum feature
++ 0.0.2 - added support for Grunt v0.4.x
 
 ## License
 Copyright (c) 2012 Kokudori
