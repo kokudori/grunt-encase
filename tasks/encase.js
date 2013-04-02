@@ -4,10 +4,9 @@ var concat = require('./concat'),
 	encasor = require('./encasor');
 
 module.exports = function (grunt) {
-	
 	grunt.registerMultiTask('encase', 
-		"concat and encase multiple JS files in an anonymous \
-		function to export any variable or inside an AMD Module", 
+		'concat and encase multiple JS files in an anonymous \
+		function to export any variable or inside an AMD Module',
 		function () {
 			var src,
 				separator = this.data.separator,

@@ -71,7 +71,7 @@ exports.encase = {
 		var src = encasor.encase(file, {
 			enviroment: 'browser',
 			exports: ['hoge'],
-			params: { "window": "w", "document": "d" }
+			params: { 'window': 'w', 'document': 'd' }
 		}, grunt);
 
 		test.strictEqual(dest, src);
@@ -87,7 +87,7 @@ exports.encase = {
 		var src = encasor.encase(file, {
 			enviroment: 'browser',
 			exports: [],
-			defines: { "jquery": "$", "backbone": "bb" }
+			defines: { 'jquery': '$', 'backbone': 'bb' }
 		}, grunt);
 
 		test.strictEqual(dest, src);

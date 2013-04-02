@@ -35,7 +35,7 @@
 				src: 'test/src/src.js',
 				dest: 'test/dest/params-browser.js',
 				exports: ['hoge'],
-				params:{"window":"w", "document":"d"}
+				params:{'window':'w', 'document':'d'}
 			},
 			'amd-browser-test': {
 				separator: '\n',
@@ -43,7 +43,7 @@
 				src: 'test/src/src.js',
 				dest: 'test/dest/amd-browser.js',
 				exports: [],
-				defines:{"jquery":"$", "backbone":"bb"}
+				defines:{'jquery':'$', 'backbone':'bb'}
 			}			
 		},
 		nodeunit: {
@@ -52,18 +52,29 @@
 		jshint: {
 			files: ['Gruntfile.js', 'tasks/*.js', 'test/*.js', 'test/**/*.js'],
 			options: {
-				curly: true,
+				multistr: true,
+				bitwise: true,
+				camelcase: true,
 				eqeqeq: true,
 				immed: true,
 				latedef: true,
 				newcap: true,
 				noarg: true,
+				noempty: true,
+				nonew: true,
+				plusplus: true,
+				quotmark: true,
 				sub: true,
 				undef: true,
 				boss: true,
 				eqnull: true,
 				node: true,
-				es5: true
+				es5: true,
+				globals: {
+					'define': true,
+					'window': true,
+					'document': true
+				}
 			}
 		}
 	});
@@ -72,5 +83,5 @@
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
-	grunt.registerTask('default', ['jshint', 'encase', 'nodeunit']);
+	grunt.registerTask('default', ['encase', 'nodeunit', 'jshint']);
 };
