@@ -40,7 +40,7 @@
 			'amd-browser-test': {
 				separator: '\n',
 				enviroment: 'browser',
-				src: 'test/src/src.js',
+				src: 'test/src/*.js',
 				dest: 'test/dest/amd-browser-test.js',
 				exports: [],
 				defines:{"jquery":"$", "backbone":"bb"}
