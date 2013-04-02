@@ -72,7 +72,5 @@
 	});
 
 	grunt.loadTasks('tasks');
-
-	// https://github.com/gruntjs/grunt/issues/349 fixed in Grunt v0.4.
-	grunt.registerTask('default', 'encase test'); // add lint (lint is fatal with UTF8 BOM)
+	grunt.registerTask('default', ['encase']);
 };

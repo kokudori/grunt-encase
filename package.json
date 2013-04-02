@@ -1,7 +1,7 @@
 {
   "name": "grunt-encase",
-  "description": "concat and encased in an anonymous function to export any variable",
-  "version": "0.0.1",
+  "description": "concat and encase multiple JS files in an anonymous function to export any variable or inside an AMD Module",
+  "version": "0.0.2",
   "homepage": "https://github.com/kokudori/grunt-encase",
   "author": {
     "name": "Kokudori",
@@ -20,20 +20,24 @@
       "url": "https://github.com/kokudori/grunt-encase/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "grunt.js",
+  "main": "Gruntfile.js",
   "engines": {
-    "node": "*"
+    "node": ">= 0.8.0"
   },
   "scripts": {
     "test": "grunt test"
   },
-  "dependencies": {
-    "grunt": "~0.3.17"
-  },
   "devDependencies": {
-    "grunt": "~0.3.17"
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt": "~0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin", "encase"
   ]
 }
