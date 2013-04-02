@@ -1,4 +1,6 @@
-﻿module.exports = function (grunt) {
+﻿'use strict';
+
+module.exports = function (grunt) {
 	grunt.initConfig({
 		encase: {
 			'browser-test': {
@@ -35,7 +37,7 @@
 				src: 'test/src/src.js',
 				dest: 'test/dest/params-browser.js',
 				exports: ['hoge'],
-				params:{'window':'w', 'document':'d'}
+				params: {'window':'w', 'document':'d'}
 			},
 			'amd-browser-test': {
 				separator: '\n',
@@ -43,8 +45,8 @@
 				src: 'test/src/src.js',
 				dest: 'test/dest/amd-browser.js',
 				exports: [],
-				defines:{'jquery':'$', 'backbone':'bb'}
-			}			
+				defines: {'jquery':'$', 'backbone':'bb'}
+			}
 		},
 		nodeunit: {
 			tests: ['test/test.js']
@@ -64,8 +66,8 @@
 				nonew: true,
 				plusplus: true,
 				quotmark: true,
-				sub: true,
 				undef: true,
+				sub: true,
 				boss: true,
 				eqnull: true,
 				node: true,

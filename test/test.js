@@ -1,4 +1,6 @@
-﻿var grunt = require('grunt'),
+﻿'use strict';
+
+var grunt = require('grunt'),
 	encasor = require('../tasks/encasor');
 
 exports.encase = {
@@ -11,7 +13,7 @@ exports.encase = {
 		var src = encasor.encase(file, {
 			enviroment: 'browser',
 			exports: 'hoge'
-		}, grunt);
+		});
 
 		test.strictEqual(dest, src);
 
@@ -26,7 +28,7 @@ exports.encase = {
 		var src = encasor.encase(file, {
 			enviroment: 'node',
 			exports: 'hoge'
-		}, grunt);
+		});
 
 		test.strictEqual(dest, src);
 
@@ -41,7 +43,7 @@ exports.encase = {
 		var src = encasor.encase(file, {
 			enviroment: 'browser',
 			exports: ['hoge', 'piyo', 'foo']
-		}, grunt);
+		});
 
 		test.strictEqual(dest, src);
 
@@ -56,7 +58,7 @@ exports.encase = {
 		var src = encasor.encase(file, {
 			enviroment: 'node',
 			exports: ['hoge', 'piyo', 'foo']
-		}, grunt);
+		});
 
 		test.strictEqual(dest, src);
 
@@ -72,7 +74,7 @@ exports.encase = {
 			enviroment: 'browser',
 			exports: ['hoge'],
 			params: { 'window': 'w', 'document': 'd' }
-		}, grunt);
+		});
 
 		test.strictEqual(dest, src);
 
@@ -88,7 +90,7 @@ exports.encase = {
 			enviroment: 'browser',
 			exports: [],
 			defines: { 'jquery': '$', 'backbone': 'bb' }
-		}, grunt);
+		});
 
 		test.strictEqual(dest, src);
 

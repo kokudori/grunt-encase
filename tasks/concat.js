@@ -19,6 +19,6 @@ concat.concat = function (files, separator, grunt) {
 			// Read file source.
 			return grunt.file.read(filepath);
 		}).join(grunt.util.normalizelf(separator));
-	});	
+	});
 	return src;
 };

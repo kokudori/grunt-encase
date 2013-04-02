@@ -4,7 +4,7 @@ var concat = require('./concat'),
 	encasor = require('./encasor');
 
 module.exports = function (grunt) {
-	grunt.registerMultiTask('encase', 
+	grunt.registerMultiTask('encase',
 		'concat and encase multiple JS files in an anonymous \
 		function to export any variable or inside an AMD Module',
 		function () {
@@ -20,7 +20,11 @@ module.exports = function (grunt) {
 			// Concat Files
 			src = concat.concat(this.files, separator, grunt);
 			// Encase src
-			src = encasor.encase(src, options, grunt);
+			try {
+				src = encasor.encase(src, options);
+			} catch (e) {
+				grunt.fatal(e);
+			}
 			grunt.file.write(this.data.dest, src);
 			if (this.errorCount) { return false; }
 			grunt.log.writeln('Encased File "' + this.data.dest + '" created!');
