@@ -15,7 +15,8 @@ module.exports = function (grunt) {
 					enviroment: this.data.enviroment,
 					exports: this.data.exports,
 					params: this.data.params,
-					defines: this.data.defines
+					defines: this.data.defines,
+					banner: this.data.banner
 				};
 
 			try {
@@ -23,6 +24,7 @@ module.exports = function (grunt) {
 			} catch (e) {
 				grunt.fatal(e);
 			}
+			result = options.banner ? (options.banner + "\n\n" + result) : result;
 			grunt.file.write(this.data.dest, result);
 			if (this.errorCount)
 				return false;
