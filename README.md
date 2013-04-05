@@ -57,6 +57,7 @@ Then add some configuration for the plugin like so:
             develop: {                      // Target
               separator: '\n',              // Concat Separator
               enviroment: 'browser',        // Target Enviroment ('node' or 'browser')
+              banner: '<%= meta.banner %>', // Optional Banner
               exports: ['hoge', 'piyo'],    // Export Variables (string expression or variable names array)
               params: {"window": "w"},      // Params passed into anonymous function, key/value represents ... 
                                             // ... how they will be utilized in the function call argument vs function argument		   
@@ -81,6 +82,7 @@ in the initConfig like below.
             develop: {                      // Target
               separator: '\n',              // Concat Separator
               enviroment: 'browser',        // Target Enviroment ('node' or 'browser')
+              banner: '<%= meta.banner %>', // Optional Banner              
               exports: ['hoge', 'piyo'],    // Export Variables (string expression or variable names array)
               defines: {
                 "jquery": "$",              // Params to be used in constructing the AMD 'define' function
