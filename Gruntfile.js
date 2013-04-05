@@ -41,6 +41,7 @@ module.exports = function (grunt) {
 			},
 			'amd-browser-test': {
 				separator: '\n',
+				banner: '/* amd-browser-test */',
 				enviroment: 'browser',
 				src: 'test/src/src.js',
 				dest: 'test/dest/amd-browser.js',
