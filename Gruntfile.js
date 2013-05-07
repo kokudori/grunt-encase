@@ -36,6 +36,7 @@ module.exports = function (grunt) {
 			'params-browser-test': {
 				separator: '\n',
 				enviroment: 'browser',
+				useStrict: true,
 				src: 'test/src/src.js',
 				dest: 'test/dest/params-browser.js',
 				exports: ['hoge'],

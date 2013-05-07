@@ -53,16 +53,26 @@ exports.encase = function (content, options) {
 		}
 
 		// wrap the file content into an IIFE
-		var functionCallerParamsStr = Object.keys(params).join(','),
+		var functionCallerParamsStr = (function () {
+			var names = Object.keys(params);
+			if (options.useStrict)
+				names = ['this'].concat(names);
+			return names.join(', ');
+		})(),
 			functionParamsStr = (function (params) {
 				var names = Object.keys(params);
 				if (names.length === 0)
 					return 'undefined';
 				return names.map(function (name) {
 					return params[name];
-				}).join(',') + ',undefined';
+				}).join(', ') + ', undefined';
 			})(params);
-		return '(function(' + functionParamsStr + ') {\n' + strict + '\n' + content + '\n' + output + '\n})(' + functionCallerParamsStr + ');';
+		var func = '(function(' + functionParamsStr + ') {\n' + strict + '\n' + content + '\n' + output + '\n})';
+		if (options.useStrict)
+			func += '.call(' + functionCallerParamsStr + ');';
+		else
+			func += '(' + functionCallerParamsStr + ');';
+		return func;
 	})();
 	return options.banner ? (options.banner + '\n\n' + result) : result;
 };

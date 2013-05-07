@@ -74,6 +74,7 @@ exports.encase = {
 
 		var src = encasor.encase(file, {
 			enviroment: 'browser',
+			useStrict: true,
 			exports: ['hoge'],
 			params: { 'window': 'w', 'document': 'd' }
 		});

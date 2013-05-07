@@ -5,4 +5,4 @@ var hoge = 100,
 	foo = 300,
 	bar = 400;
 module.exports.hoge = hoge;
-})();
+}).call(this);

@@ -1,8 +1,8 @@
-(function(w,d,undefined) {
-
+(function(w, d, undefined) {
+'use strict';
 var hoge = 100,
 	piyo = 200,
 	foo = 300,
 	bar = 400;
 window.hoge = hoge;
-})(window,document);
+}).call(this, window, document);
