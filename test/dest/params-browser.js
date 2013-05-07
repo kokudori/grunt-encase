@@ -1,4 +1,5 @@
 (function(w,d,undefined) {
+
 var hoge = 100,
 	piyo = 200,
 	foo = 300,

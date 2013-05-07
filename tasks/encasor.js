@@ -13,6 +13,7 @@ exports.encase = function (content, options) {
 	if (typeof defines !== 'object')
 		throw 'defines option needs to be an object.';
 
+	var strict = options.useStrict ? '\'use strict\';' : '';
 	var enviroment = (function () {
 		if (options.enviroment === 'node')
 			return 'node';
@@ -48,7 +49,7 @@ exports.encase = function (content, options) {
 				}).join(', ') + ') {\n';
 			})(defines);
 
-			return prepend + content + output + '\n});';
+			return prepend + strict + '\n' + content + output + '\n});';
 		}
 
 		// wrap the file content into an IIFE
@@ -61,7 +62,7 @@ exports.encase = function (content, options) {
 					return params[name];
 				}).join(',') + ',undefined';
 			})(params);
-		return '(function(' + functionParamsStr + ') {\n' + content + '\n' + output + '\n})(' + functionCallerParamsStr + ');';
+		return '(function(' + functionParamsStr + ') {\n' + strict + '\n' + content + '\n' + output + '\n})(' + functionCallerParamsStr + ');';
 	})();
 	return options.banner ? (options.banner + '\n\n' + result) : result;
 };

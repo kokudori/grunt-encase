@@ -6,6 +6,7 @@ module.exports = function (grunt) {
 			'browser-test': {
 				separator: '\n',
 				enviroment: 'browser',
+				useStrict: true,
 				src: 'test/src/src.js',
 				dest: 'test/dest/browser.js',
 				exports: 'hoge'
@@ -13,6 +14,7 @@ module.exports = function (grunt) {
 			'node-test': {
 				separator: '\n',
 				enviroment: 'node',
+				useStrict: true,
 				src: 'test/src/src.js',
 				dest: 'test/dest/node.js',
 				exports: 'hoge'
@@ -42,6 +44,7 @@ module.exports = function (grunt) {
 			'amd-browser-test': {
 				separator: '\n',
 				enviroment: 'browser',
+				useStrict: true,
 				src: 'test/src/src.js',
 				dest: 'test/dest/amd-browser.js',
 				exports: [],

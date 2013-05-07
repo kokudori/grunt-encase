@@ -16,7 +16,8 @@ module.exports = function (grunt) {
 					exports: this.data.exports,
 					params: this.data.params,
 					defines: this.data.defines,
-					banner: this.data.banner
+					banner: this.data.banner,
+					useStrict: this.data.useStrict
 				};
 
 			try {

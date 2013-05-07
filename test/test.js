@@ -12,6 +12,7 @@ exports.encase = {
 
 		var src = encasor.encase(file, {
 			enviroment: 'browser',
+			useStrict: true,
 			exports: 'hoge'
 		});
 
@@ -27,6 +28,7 @@ exports.encase = {
 
 		var src = encasor.encase(file, {
 			enviroment: 'node',
+			useStrict: true,
 			exports: 'hoge'
 		});
 
@@ -88,6 +90,7 @@ exports.encase = {
 
 		var src = encasor.encase(file, {
 			enviroment: 'browser',
+			useStrict: true,
 			exports: [],
 			defines: { 'jquery': '$', 'backbone': 'bb' }
 		});
