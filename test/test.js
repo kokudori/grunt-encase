@@ -95,5 +95,22 @@ exports.encase = {
 		test.strictEqual(dest, src);
 
 		test.done();
+	},
+	'encase src/src.js -> dest/amd-browser.js exports none defines $ = jquery, bb = backbone with banner': function (test) {
+		test.expect(1);
+
+		var file = grunt.file.read('test/src/src.js'),
+			dest = grunt.file.read('test/dest/amd-browser-with-banner.js');
+
+		var src = encasor.encase(file, {
+			enviroment: 'browser',
+			banner: '/* amd-browser-test */',
+			exports: [],
+			defines: { 'jquery': '$', 'backbone': 'bb' }
+		});
+
+		test.strictEqual(dest, src);
+
+		test.done();
 	}
 };

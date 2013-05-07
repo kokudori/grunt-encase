@@ -41,10 +41,18 @@ module.exports = function (grunt) {
 			},
 			'amd-browser-test': {
 				separator: '\n',
-				banner: '/* amd-browser-test */',
 				enviroment: 'browser',
 				src: 'test/src/src.js',
 				dest: 'test/dest/amd-browser.js',
+				exports: [],
+				defines: {'jquery':'$', 'backbone':'bb'}
+			},
+			'amd-browser-test-with-barnner': {
+				separator: '\n',
+				banner: '/* amd-browser-test */',
+				enviroment: 'browser',
+				src: 'test/src/src.js',
+				dest: 'test/dest/amd-browser-with-banner.js',
 				exports: [],
 				defines: {'jquery':'$', 'backbone':'bb'}
 			}

@@ -37,8 +37,9 @@ exports.encase = function (content, options) {
 		return 'window.' + exports + ' = ' + exports + ';';
 	})();
 
-	if (useAMD) {
-		var prepend = (function (defines) {
+	var result = (function () {
+		if (useAMD) {
+			var prepend = (function (defines) {
 				var names = Object.keys(defines);
 				return 'define([' + names.map(function (name, i) {
 					return '\'' + name + '\'';
@@ -46,19 +47,21 @@ exports.encase = function (content, options) {
 					return name;
 				}).join(', ') + ') {\n';
 			})(defines);
-		
-		return prepend + content + output + '\n});';
-	}
 
-	// wrap the file content into an IIFE
-	var functionCallerParamsStr = Object.keys(params).join(','),
-		functionParamsStr = (function (params) {
-			var names = Object.keys(params);
-			if (names.length === 0)
-				return 'undefined';
-			return names.map(function (name) {
-				return params[name];
-			}).join(',') + ',undefined';
-		})(params);
-	return '(function(' + functionParamsStr + ') {\n' + content + '\n' + output + '\n})(' + functionCallerParamsStr + ');';
+			return prepend + content + output + '\n});';
+		}
+
+		// wrap the file content into an IIFE
+		var functionCallerParamsStr = Object.keys(params).join(','),
+			functionParamsStr = (function (params) {
+				var names = Object.keys(params);
+				if (names.length === 0)
+					return 'undefined';
+				return names.map(function (name) {
+					return params[name];
+				}).join(',') + ',undefined';
+			})(params);
+		return '(function(' + functionParamsStr + ') {\n' + content + '\n' + output + '\n})(' + functionCallerParamsStr + ');';
+	})();
+	return options.banner ? (options.banner + '\n\n' + result) : result;
 };

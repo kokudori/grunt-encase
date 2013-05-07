@@ -24,7 +24,6 @@ module.exports = function (grunt) {
 			} catch (e) {
 				grunt.fatal(e);
 			}
-			result = options.banner ? (options.banner + "\n\n" + result) : result;
 			grunt.file.write(this.data.dest, result);
 			if (this.errorCount)
 				return false;
