@@ -57,6 +57,7 @@ Then add some configuration for the plugin like so:
             develop: {                      // Target
               separator: '\n',              // Concat Separator
               enviroment: 'browser',        // Target Enviroment ('node' or 'browser')
+              useStrict: true,              // 'use strict'
               banner: '<%= meta.banner %>', // Optional Banner
               exports: ['hoge', 'piyo'],    // Export Variables (string expression or variable names array)
               params: {"window": "w"},      // Params passed into anonymous function, key/value represents ... 
@@ -100,11 +101,11 @@ in the initConfig like below.
 ## TODO
 + When enviroment is 'node', can select export method by option.  
     module.exports = {name: value} or module.exports = value. (first version now)
-+ Minify option.
 
 ## Release History
 + 0.0.1 - initial release with a minimum feature
 + 0.0.2 - added support for Grunt v0.4.x
++ 0.0.3 - added support banner and useStrict option
 
 ## License
 Copyright (c) 2012-2013 Kokudori

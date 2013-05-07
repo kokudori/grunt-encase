@@ -1,7 +1,7 @@
 {
   "name": "grunt-encase",
   "description": "concat and encase multiple JS files in an anonymous function to export any variable or inside an AMD Module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/kokudori/grunt-encase",
   "author": {
     "name": "Kokudori",

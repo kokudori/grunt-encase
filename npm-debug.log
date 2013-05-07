@@ -1,0 +1,211 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@1.2.11
+3 info using node@v0.8.21
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose publish [ '.' ]
+6 verbose read json C:\Users\kokudori\Desktop\grunt-encase\package.json
+7 verbose cache add [ '.', null ]
+8 verbose cache add name=undefined spec="." args=[".",null]
+9 verbose parsed url { pathname: '.', path: '.', href: '.' }
+10 silly lockFile 3a52ce78- .
+11 verbose lock . C:\Users\kokudori\AppData\Roaming\npm-cache\3a52ce78-.lock
+12 verbose read json package.json
+13 verbose tar pack [ 'C:\\Users\\kokudori\\AppData\\Local\\Temp\\npm-5516\\1367935009127-0.37716489704325795\\tmp.tgz',
+13 verbose tar pack   '.' ]
+14 verbose tarball C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\tmp.tgz
+15 verbose folder .
+16 info prepublish grunt-encase@0.0.2
+17 silly lockFile 3a52ce78- .
+18 verbose lock . C:\Users\kokudori\AppData\Roaming\npm-cache\3a52ce78-.lock
+19 silly lockFile f47087a2-9127-0-37716489704325795-tmp-tgz C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\tmp.tgz
+20 verbose lock C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\tmp.tgz C:\Users\kokudori\AppData\Roaming\npm-cache\f47087a2-9127-0-37716489704325795-tmp-tgz.lock
+21 silly lockFile 3a52ce78- .
+22 silly lockFile 3a52ce78- .
+23 silly lockFile f47087a2-9127-0-37716489704325795-tmp-tgz C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\tmp.tgz
+24 silly lockFile f47087a2-9127-0-37716489704325795-tmp-tgz C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\tmp.tgz
+25 verbose tar unpack C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\tmp.tgz
+26 silly lockFile 4525261e-9127-0-37716489704325795-package C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\package
+27 verbose lock C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\package C:\Users\kokudori\AppData\Roaming\npm-cache\4525261e-9127-0-37716489704325795-package.lock
+28 silly lockFile f47087a2-9127-0-37716489704325795-tmp-tgz C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\tmp.tgz
+29 verbose lock C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\tmp.tgz C:\Users\kokudori\AppData\Roaming\npm-cache\f47087a2-9127-0-37716489704325795-tmp-tgz.lock
+30 silly gunzTarPerm modes [ '755', '644' ]
+31 silly gunzTarPerm extractEntry package.json
+32 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+33 silly gunzTarPerm extractEntry .npmignore
+34 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+35 silly gunzTarPerm extractEntry README.md
+36 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+37 silly gunzTarPerm extractEntry Gruntfile.js
+38 silly gunzTarPerm modified mode [ 'Gruntfile.js', 438, 420 ]
+39 silly gunzTarPerm extractEntry .gitattributes
+40 silly gunzTarPerm modified mode [ '.gitattributes', 438, 420 ]
+41 silly gunzTarPerm extractEntry .travis.yml
+42 silly gunzTarPerm modified mode [ '.travis.yml', 438, 420 ]
+43 silly gunzTarPerm extractEntry docs/example.md
+44 silly gunzTarPerm modified mode [ 'docs/example.md', 438, 420 ]
+45 silly gunzTarPerm extractEntry LICENSE-MIT
+46 silly gunzTarPerm modified mode [ 'LICENSE-MIT', 438, 420 ]
+47 silly gunzTarPerm extractEntry tasks/concat.js
+48 silly gunzTarPerm modified mode [ 'tasks/concat.js', 438, 420 ]
+49 silly gunzTarPerm extractEntry tasks/encase.js
+50 silly gunzTarPerm modified mode [ 'tasks/encase.js', 438, 420 ]
+51 silly gunzTarPerm extractEntry tasks/encasor.js
+52 silly gunzTarPerm modified mode [ 'tasks/encasor.js', 438, 420 ]
+53 silly gunzTarPerm extractEntry test/test.js
+54 silly gunzTarPerm modified mode [ 'test/test.js', 438, 420 ]
+55 silly gunzTarPerm extractEntry test/dest/amd-browser-with-banner.js
+56 silly gunzTarPerm modified mode [ 'test/dest/amd-browser-with-banner.js', 438, 420 ]
+57 silly gunzTarPerm extractEntry test/dest/amd-browser.js
+58 silly gunzTarPerm modified mode [ 'test/dest/amd-browser.js', 438, 420 ]
+59 silly gunzTarPerm extractEntry test/dest/browser.js
+60 silly gunzTarPerm modified mode [ 'test/dest/browser.js', 438, 420 ]
+61 silly gunzTarPerm extractEntry test/dest/multiexport-browser.js
+62 silly gunzTarPerm modified mode [ 'test/dest/multiexport-browser.js', 438, 420 ]
+63 silly gunzTarPerm extractEntry test/dest/multiexport-node.js
+64 silly gunzTarPerm modified mode [ 'test/dest/multiexport-node.js', 438, 420 ]
+65 silly gunzTarPerm extractEntry test/dest/node.js
+66 silly gunzTarPerm modified mode [ 'test/dest/node.js', 438, 420 ]
+67 silly gunzTarPerm extractEntry test/dest/params-browser.js
+68 silly gunzTarPerm modified mode [ 'test/dest/params-browser.js', 438, 420 ]
+69 silly gunzTarPerm extractEntry test/src/src.js
+70 silly gunzTarPerm modified mode [ 'test/src/src.js', 438, 420 ]
+71 silly gunzTarPerm extractEntry test/src/src1.js
+72 silly gunzTarPerm modified mode [ 'test/src/src1.js', 438, 420 ]
+73 verbose read json C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\package\package.json
+74 silly lockFile 4525261e-9127-0-37716489704325795-package C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\package
+75 silly lockFile 4525261e-9127-0-37716489704325795-package C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\package
+76 silly lockFile f47087a2-9127-0-37716489704325795-tmp-tgz C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\tmp.tgz
+77 silly lockFile f47087a2-9127-0-37716489704325795-tmp-tgz C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\tmp.tgz
+78 verbose from cache C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\package\package.json
+79 verbose tar pack [ 'C:\\Users\\kokudori\\AppData\\Roaming\\npm-cache\\grunt-encase\\0.0.2\\package.tgz',
+79 verbose tar pack   'C:\\Users\\kokudori\\AppData\\Local\\Temp\\npm-5516\\1367935009127-0.37716489704325795\\package' ]
+80 verbose tarball C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package.tgz
+81 verbose folder C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\package
+82 silly lockFile 4525261e-9127-0-37716489704325795-package C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\package
+83 verbose lock C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\package C:\Users\kokudori\AppData\Roaming\npm-cache\4525261e-9127-0-37716489704325795-package.lock
+84 silly lockFile 8c86d51c-e-grunt-encase-0-0-2-package-tgz C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package.tgz
+85 verbose lock C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package.tgz C:\Users\kokudori\AppData\Roaming\npm-cache\8c86d51c-e-grunt-encase-0-0-2-package-tgz.lock
+86 silly lockFile 4525261e-9127-0-37716489704325795-package C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\package
+87 silly lockFile 4525261e-9127-0-37716489704325795-package C:\Users\kokudori\AppData\Local\Temp\npm-5516\1367935009127-0.37716489704325795\package
+88 silly lockFile 8c86d51c-e-grunt-encase-0-0-2-package-tgz C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package.tgz
+89 silly lockFile 8c86d51c-e-grunt-encase-0-0-2-package-tgz C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package.tgz
+90 silly lockFile e317e0e3-cache-grunt-encase-0-0-2-package C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package
+91 verbose lock C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package C:\Users\kokudori\AppData\Roaming\npm-cache\e317e0e3-cache-grunt-encase-0-0-2-package.lock
+92 silly lockFile e317e0e3-cache-grunt-encase-0-0-2-package C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package
+93 silly lockFile e317e0e3-cache-grunt-encase-0-0-2-package C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package
+94 verbose tar unpack C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package.tgz
+95 silly lockFile e317e0e3-cache-grunt-encase-0-0-2-package C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package
+96 verbose lock C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package C:\Users\kokudori\AppData\Roaming\npm-cache\e317e0e3-cache-grunt-encase-0-0-2-package.lock
+97 silly lockFile 8c86d51c-e-grunt-encase-0-0-2-package-tgz C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package.tgz
+98 verbose lock C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package.tgz C:\Users\kokudori\AppData\Roaming\npm-cache\8c86d51c-e-grunt-encase-0-0-2-package-tgz.lock
+99 silly gunzTarPerm modes [ '755', '644' ]
+100 silly gunzTarPerm extractEntry package.json
+101 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+102 silly gunzTarPerm extractEntry .npmignore
+103 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+104 silly gunzTarPerm extractEntry README.md
+105 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+106 silly gunzTarPerm extractEntry Gruntfile.js
+107 silly gunzTarPerm modified mode [ 'Gruntfile.js', 438, 420 ]
+108 silly gunzTarPerm extractEntry .gitattributes
+109 silly gunzTarPerm modified mode [ '.gitattributes', 438, 420 ]
+110 silly gunzTarPerm extractEntry .travis.yml
+111 silly gunzTarPerm modified mode [ '.travis.yml', 438, 420 ]
+112 silly gunzTarPerm extractEntry docs/example.md
+113 silly gunzTarPerm modified mode [ 'docs/example.md', 438, 420 ]
+114 silly gunzTarPerm extractEntry LICENSE-MIT
+115 silly gunzTarPerm modified mode [ 'LICENSE-MIT', 438, 420 ]
+116 silly gunzTarPerm extractEntry tasks/concat.js
+117 silly gunzTarPerm modified mode [ 'tasks/concat.js', 438, 420 ]
+118 silly gunzTarPerm extractEntry tasks/encase.js
+119 silly gunzTarPerm modified mode [ 'tasks/encase.js', 438, 420 ]
+120 silly gunzTarPerm extractEntry tasks/encasor.js
+121 silly gunzTarPerm modified mode [ 'tasks/encasor.js', 438, 420 ]
+122 silly gunzTarPerm extractEntry test/test.js
+123 silly gunzTarPerm modified mode [ 'test/test.js', 438, 420 ]
+124 silly gunzTarPerm extractEntry test/dest/amd-browser-with-banner.js
+125 silly gunzTarPerm modified mode [ 'test/dest/amd-browser-with-banner.js', 438, 420 ]
+126 silly gunzTarPerm extractEntry test/dest/amd-browser.js
+127 silly gunzTarPerm modified mode [ 'test/dest/amd-browser.js', 438, 420 ]
+128 silly gunzTarPerm extractEntry test/dest/browser.js
+129 silly gunzTarPerm modified mode [ 'test/dest/browser.js', 438, 420 ]
+130 silly gunzTarPerm extractEntry test/dest/multiexport-browser.js
+131 silly gunzTarPerm modified mode [ 'test/dest/multiexport-browser.js', 438, 420 ]
+132 silly gunzTarPerm extractEntry test/dest/multiexport-node.js
+133 silly gunzTarPerm modified mode [ 'test/dest/multiexport-node.js', 438, 420 ]
+134 silly gunzTarPerm extractEntry test/dest/node.js
+135 silly gunzTarPerm modified mode [ 'test/dest/node.js', 438, 420 ]
+136 silly gunzTarPerm extractEntry test/dest/params-browser.js
+137 silly gunzTarPerm modified mode [ 'test/dest/params-browser.js', 438, 420 ]
+138 silly gunzTarPerm extractEntry test/src/src.js
+139 silly gunzTarPerm modified mode [ 'test/src/src.js', 438, 420 ]
+140 silly gunzTarPerm extractEntry test/src/src1.js
+141 silly gunzTarPerm modified mode [ 'test/src/src1.js', 438, 420 ]
+142 verbose read json C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package\package.json
+143 silly lockFile e317e0e3-cache-grunt-encase-0-0-2-package C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package
+144 silly lockFile e317e0e3-cache-grunt-encase-0-0-2-package C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package
+145 silly lockFile 8c86d51c-e-grunt-encase-0-0-2-package-tgz C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package.tgz
+146 silly lockFile 8c86d51c-e-grunt-encase-0-0-2-package-tgz C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package.tgz
+147 silly shasum updated bytes 6316
+148 info shasum be0ea05d3872bc720e874554d2a861892d5c7432
+148 info shasum C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package.tgz
+149 verbose from cache C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package\package.json
+150 verbose chmod C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package.tgz 644
+151 silly chown skipping for windows C:\Users\kokudori\AppData\Roaming\npm-cache\grunt-encase\0.0.2\package.tgz
+152 silly lockFile 3a52ce78- .
+153 silly publish { name: 'grunt-encase',
+153 silly publish   description: 'concat and encase multiple JS files in an anonymous function to export any variable or inside an AMD Module',
+153 silly publish   version: '0.0.2',
+153 silly publish   homepage: 'https://github.com/kokudori/grunt-encase',
+153 silly publish   author: { name: 'Kokudori', email: 'kokudori0912@gmail.com' },
+153 silly publish   repository:
+153 silly publish    { type: 'git',
+153 silly publish      url: 'git://github.com/kokudori/grunt-encase.git' },
+153 silly publish   bugs: { url: 'https://github.com/kokudori/grunt-encase/issues' },
+153 silly publish   licenses:
+153 silly publish    [ { type: 'MIT',
+153 silly publish        url: 'https://github.com/kokudori/grunt-encase/blob/master/LICENSE-MIT' } ],
+153 silly publish   main: 'Gruntfile.js',
+153 silly publish   engines: { node: '>= 0.8.0' },
+153 silly publish   scripts: { test: 'grunt nodeunit' },
+153 silly publish   devDependencies:
+153 silly publish    { 'grunt-contrib-jshint': '~0.1.1',
+153 silly publish      'grunt-contrib-nodeunit': '~0.1.2',
+153 silly publish      grunt: '~0.4.1' },
+153 silly publish   peerDependencies: { grunt: '~0.4.1' },
+153 silly publish   keywords: [ 'gruntplugin', 'encase' ],
+153 silly publish   readme: '# grunt-encase [![Build Status](https://travis-ci.org/kokudori/grunt-encase.png?branch=master)](https://travis-ci.org/kokudori/grunt-encase)  \r\nConcat and encase in an anonymous function to export any variable or encase within a AMD module.  \r\nTest every possible individual files and variables can be selected to be published at release file.  \r\n\r\n## Getting Started\r\nInstall this grunt plugin next to your project\'s with: `npm install grunt-encase`  \r\nThen add this line to your project\'s `Gruntfile.js` Gruntfile:  \r\n\r\n    grunt.loadNpmTasks(\'grunt-encase\');\r\n\r\nFor information about installing the Grunt, please see here  \r\n[http://gruntjs.com/getting-started](http://gruntjs.com/getting-started)\r\n\r\n## Example\r\n\r\nsrc1.js\r\n\r\n    // Does not need to be wrapped in an anonymous function.\r\n    var hoge = \'hogehoge\';\r\n    ...\r\n\r\nsrc2.js\r\n\r\n    // Does not need to be wrapped in an anonymous function.\r\n    var piyo = \'piyopiyo\';\r\n    ...\r\n\r\ndest.js\r\n\r\n    (function(s, undefined) {\r\n      // concat src1.js and src2.js\r\n      var hoge = \'hogehoge\';\r\n      ...\r\n      var piyo = \'piyopiyo\';\r\n      ...\r\n      \r\n      // export variable can select with option.\r\n      module.exports = {hoge: hoge, piyo: piyo}; // if enviroment is \'browser\', window = {...}\r\n    })(someVariable);\r\n\r\n\r\n## Documentation\r\nYou\'ll need to install `grunt-encase` first:\r\n\r\n    npm install grunt-encase\r\n\r\nThen modify your `Gruntfile.js` file by adding the following line:\r\n\r\n    grunt.loadNpmTasks(\'grunt-encase\');\r\n\r\nThen add some configuration for the plugin like so:\r\n\r\n    grunt.initConfig({\r\n        ...\r\n        grunt.initConfig({\r\n          encase: {                         // Task\r\n            develop: {                      // Target\r\n              separator: \'\\n\',              // Concat Separator\r\n              enviroment: \'browser\',        // Target Enviroment (\'node\' or \'browser\')\r\n              banner: \'<%= meta.banner %>\', // Optional Banner\r\n              exports: [\'hoge\', \'piyo\'],    // Export Variables (string expression or variable names array)\r\n              params: {"window": "w"},      // Params passed into anonymous function, key/value represents ... \r\n                                            // ... how they will be utilized in the function call argument vs function argument\t\t   \r\n              src: \'src/*.js\',              // source (string expression or filenames array)\r\n              dest: \'dest/build.js\'         // destination\r\n            }\r\n          }\r\n        });\r\n        ...\r\n    });\r\n\r\nThen just run `grunt encase` and enjoy!\r\n\r\n\r\nThe file content can be encased in a AMD Module by specifying "defines" attribute\r\nin the initConfig like below.\r\n\r\n    grunt.initConfig({\r\n        ...\r\n        grunt.initConfig({\r\n          encase: {                         // Task\r\n            develop: {                      // Target\r\n              separator: \'\\n\',              // Concat Separator\r\n              enviroment: \'browser\',        // Target Enviroment (\'node\' or \'browser\')\r\n              banner: \'<%= meta.banner %>\', // Optional Banner              \r\n              exports: [\'hoge\', \'piyo\'],    // Export Variables (string expression or variable names array)\r\n              defines: {\r\n                "jquery": "$",              // Params to be used in constructing the AMD \'define\' function\r\n                "backbone": "bb"\r\n              },\r\n              src: \'src/*.js\',              // source (string expression or filenames array)\r\n              dest: \'dest/build.js\'         // destination\r\n            }\r\n          }\r\n        });\r\n        ...\r\n    });\r\n \r\n\r\n## TODO\r\n+ When enviroment is \'node\', can select export method by option.  \r\n    module.exports = {name: value} or module.exports = value. (first version now)\r\n+ Minify option.\r\n\r\n## Release History\r\n+ 0.0.1 - initial release with a minimum feature\r\n+ 0.0.2 - added support for Grunt v0.4.x\r\n\r\n## License\r\nCopyright (c) 2012-2013 Kokudori\r\nLicensed under the MIT license.\r\n',
+153 silly publish   readmeFilename: 'README.md',
+153 silly publish   _id: 'grunt-encase@0.0.2',
+153 silly publish   dist: { shasum: 'be0ea05d3872bc720e874554d2a861892d5c7432' },
+153 silly publish   _from: '.' }
+154 verbose url raw grunt-encase
+155 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-encase' ]
+156 verbose url resolved https://registry.npmjs.org/grunt-encase
+157 info trying registry request attempt 1 at 22:57:03
+158 http PUT https://registry.npmjs.org/grunt-encase
+159 http 409 https://registry.npmjs.org/grunt-encase
+160 verbose url raw grunt-encase
+161 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-encase' ]
+162 verbose url resolved https://registry.npmjs.org/grunt-encase
+163 info trying registry request attempt 1 at 22:57:05
+164 http GET https://registry.npmjs.org/grunt-encase
+165 http 200 https://registry.npmjs.org/grunt-encase
+166 error publish fail Cannot publish over existing version.
+166 error publish fail Update the 'version' field in package.json and try again.
+166 error publish fail
+166 error publish fail If the previous version was published in error, see:
+166 error publish fail     npm help unpublish
+166 error publish fail
+166 error publish fail To automatically increment version numbers, see:
+166 error publish fail     npm help version
+167 error System Windows_NT 6.1.7601
+168 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+169 error cwd C:\Users\kokudori\Desktop\grunt-encase
+170 error node -v v0.8.21
+171 error npm -v 1.2.11
+172 error code EPUBLISHCONFLICT
+173 verbose exit [ 1, true ]
