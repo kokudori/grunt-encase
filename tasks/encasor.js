@@ -22,6 +22,14 @@ exports.encase = function (content, options) {
 		throw 'enviroment option needs "node" or "browser".';
 	})();
 	var output = (function () {
+		if (useAMD) {
+			if (exports instanceof Array) {
+				return exports.map(function (name) {
+					return 'exports.' + name + ' = ' + name + ';';
+				}).join('\n');
+			}
+			return 'return ' + exports + ';';
+		}
 		if (enviroment === 'node') {
 			if (exports instanceof Array) {
 				return 'module.exports = { ' + exports.map(function (name) {
@@ -41,6 +49,11 @@ exports.encase = function (content, options) {
 	var result = (function () {
 		if (useAMD) {
 			var prepend = (function (defines) {
+				// Add the exports object
+				if (exports instanceof Array) {
+					defines['exports'] = 'exports';
+				}
+
 				var names = Object.keys(defines);
 				return 'define([' + names.map(function (name, i) {
 					return '\'' + name + '\'';
@@ -49,7 +62,7 @@ exports.encase = function (content, options) {
 				}).join(', ') + ') {\n';
 			})(defines);
 
-			return prepend + strict + '\n' + content + output + '\n});';
+			return prepend + strict + '\n' + content + '\n' + output + '\n});';
 		}
 
 		// wrap the file content into an IIFE
