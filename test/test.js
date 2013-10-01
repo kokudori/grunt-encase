@@ -100,6 +100,40 @@ exports.encase = {
 
 		test.done();
 	},
+	'encase src/src.js -> des/amd-browser-export exports hoge defines $ = jquery, bb = backbone': function (test) {
+		test.expect(1);
+
+		var file = grunt.file.read('test/src/src.js'),
+			dest = grunt.file.read('test/dest/amd-browser-export.js');
+
+		var src = encasor.encase(file, {
+			enviroment: 'browser',
+			useStrict: true,
+			exports: 'hoge',
+			defines: { 'jquery': '$', 'backbone': 'bb' }
+		});
+
+		test.strictEqual(dest, src);
+
+		test.done();
+	},
+	'encase src/src.js -> des/amd-browser-multiexport exports hoge, hoge, piyo, foo defines $ = jquery, bb = backbone': function (test) {
+		test.expect(1);
+
+		var file = grunt.file.read('test/src/src.js'),
+			dest = grunt.file.read('test/dest/amd-browser-multiexport.js');
+
+		var src = encasor.encase(file, {
+			enviroment: 'browser',
+			useStrict: true,
+			exports: ['hoge', 'piyo', 'foo'],
+			defines: { 'jquery': '$', 'backbone': 'bb' }
+		});
+
+		test.strictEqual(dest, src);
+
+		test.done();
+	},
 	'encase src/src.js -> dest/amd-browser.js exports none defines $ = jquery, bb = backbone with banner': function (test) {
 		test.expect(1);
 
