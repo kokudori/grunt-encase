@@ -96,17 +96,14 @@ in the initConfig like below.
         });
         ...
     });
- 
 
-## TODO
-+ When enviroment is 'node', can select export method by option.  
-    module.exports = {name: value} or module.exports = value. (first version now)
 
 ## Release History
 + 0.0.1 - initial release with a minimum feature
 + 0.0.2 - added support for Grunt v0.4.x
 + 0.0.3 - added support banner and useStrict option
++ 0.1.0 - added support auto exports amd-style or tranditional window-style in browser
 
 ## License
-Copyright (c) 2012-2013 Kokudori
+Copyright (c) 2012-2014 Kokudori
 Licensed under the MIT license.

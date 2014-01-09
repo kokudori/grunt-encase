@@ -13,7 +13,7 @@ exports.encase = function (content, options) {
 	if (typeof defines !== 'object')
 		throw 'defines option needs to be an object.';
 
-	var strict = options.useStrict ? '\'use strict\';' : '';
+	var strict = options.useStrict ? "'use strict';" : '';
 	var enviroment = (function () {
 		if (options.enviroment === 'node')
 			return 'node';
@@ -38,12 +38,24 @@ exports.encase = function (content, options) {
 			}
 			return 'module.exports.' + exports + ' = ' + exports + ';';
 		}
-		if (exports instanceof Array) {
-			return exports.map(function (name) {
-				return 'window.' + name + ' = ' + name + ';';
-			}).join('\n');
-		}
-		return 'window.' + exports + ' = ' + exports + ';';
+		var tranditional = (function () {
+			if (exports instanceof Array) {
+				return exports.map(function (name) {
+					return 'window.' + name + ' = ' + name + ';';
+				}).join('\n');
+			}
+			return 'window.' + exports + ' = ' + exports + ';';
+		})();
+		var amd = (function () {
+			if (exports instanceof Array) {
+				return exports.map(function (name) {
+					return 'exports.' + name + ' = ' + name + ';';
+				}).join('\n');
+			}
+			return 'return ' + exports + ';';
+		})();
+		var conditional = "if (typeof define === 'function' && typeof define.amd === 'object') {\n";
+		return conditional + 'define(function(exports) { ' + amd + ' });' + '\n} else {\n' + tranditional + '\n}';
 	})();
 
 	var result = (function () {
@@ -56,7 +68,7 @@ exports.encase = function (content, options) {
 
 				var names = Object.keys(defines);
 				return 'define([' + names.map(function (name, i) {
-					return '\'' + name + '\'';
+					return "'" + name + "'";
 				}).join(', ') + '], function(' + names.map(function (name) {
 					return name;
 				}).join(', ') + ') {\n';
