@@ -1,6 +1,6 @@
 /* amd-browser-test */
 
-define(['jquery', 'backbone', 'exports'], function(jquery, backbone, exports) {
+define(['jquery', 'backbone', 'exports'], function($, bb, exports) {
 
 var hoge = 100,
 	piyo = 200,
