@@ -100,7 +100,7 @@ exports.encase = {
 
 		test.done();
 	},
-	'encase src/src.js -> des/amd-browser-export exports hoge defines $ = jquery, bb = backbone': function (test) {
+	'encase src/src.js -> dest/amd-browser-export exports hoge defines $ = jquery, bb = backbone': function (test) {
 		test.expect(1);
 
 		var file = grunt.file.read('test/src/src.js'),
@@ -117,7 +117,7 @@ exports.encase = {
 
 		test.done();
 	},
-	'encase src/src.js -> des/amd-browser-multiexport exports hoge, hoge, piyo, foo defines $ = jquery, bb = backbone': function (test) {
+	'encase src/src.js -> dest/amd-browser-multiexport exports hoge, hoge, piyo, foo defines $ = jquery, bb = backbone': function (test) {
 		test.expect(1);
 
 		var file = grunt.file.read('test/src/src.js'),
