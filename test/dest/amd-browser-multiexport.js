@@ -1,4 +1,4 @@
-define(['jquery', 'backbone', 'exports'], function(jquery, backbone, exports) {
+define(['jquery', 'backbone', 'exports'], function($, bb, exports) {
 'use strict';
 var hoge = 100,
 	piyo = 200,

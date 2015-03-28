@@ -70,7 +70,7 @@ exports.encase = function (content, options) {
 				return 'define([' + names.map(function (name, i) {
 					return "'" + name + "'";
 				}).join(', ') + '], function(' + names.map(function (name) {
-					return name;
+					return defines[name];
 				}).join(', ') + ') {\n';
 			})(defines);
 
