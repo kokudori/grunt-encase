@@ -103,7 +103,8 @@ in the initConfig like below.
 + 0.0.2 - added support for Grunt v0.4.x
 + 0.0.3 - added support banner and useStrict option
 + 0.1.0 - added support auto exports amd-style or tranditional window-style in browser
++ 0.2.0 - dependency plugin version up and fixed some bug
 
 ## License
-Copyright (c) 2012-2014 Kokudori
+Copyright (c) 2012-2015 Kokudori
 Licensed under the MIT license.
